@@ -1,0 +1,740 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meghalaya Nomad Tours | Local tour operator</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f9fafb;
+      color: #1e2f2d;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* nature color palette */
+    :root {
+      --pine: #1b4d3e;
+      --moss: #2b6c4e;
+      --leaf: #3e8e6b;
+      --sand: #f2e9d0;
+      --cloud: #f0f7f4;
+      --warm: #f8bc6c;
+    }
+
+    /* navigation */
+    nav {
+      background: var(--pine);
+      padding: 1rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,20,10,0.2);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #fddc9b;
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover {
+      border-bottom-color: var(--warm);
+      color: #fde5b4;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* sections general */
+    section {
+      padding: 4rem 5%;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      color: var(--pine);
+      position: relative;
+      font-weight: 600;
+    }
+    h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--moss);
+      margin-top: 0.5rem;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--moss);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 14px rgba(27,77,62,0.3);
+    }
+    .btn:hover {
+      background: #144c3b;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(27,77,62,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--moss);
+      color: var(--moss);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: var(--moss);
+      color: white;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(rgba(20,50,35,0.75), rgba(10,30,20,0.8)),
+                  url('https://images.unsplash.com/photo-1564865878688-9a244444042a?w=1200&auto=format') center/cover fixed;
+      color: white;
+      text-align: center;
+      padding: 8rem 5%;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 6px #0a2a1e;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 1rem auto 2.5rem;
+      opacity: 0.95;
+    }
+    .hero .btn {
+      background: var(--warm);
+      color: #1d3d31;
+      font-weight: 700;
+      margin: 0.5rem;
+    }
+
+    /* cards grid */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 12px 28px -8px rgba(0,40,20,0.1);
+      transition: 0.2s;
+      border: 1px solid rgba(60,110,80,0.1);
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 18px 32px -8px #1b4d3e33;
+    }
+    .card i {
+      font-size: 2.5rem;
+      color: var(--leaf);
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.6rem;
+      color: var(--pine);
+      margin-bottom: 0.25rem;
+    }
+    .card .location {
+      color: #5e7a6b;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* features (local guides, etc) */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+    .feature-item {
+      background: var(--cloud);
+      padding: 2rem;
+      border-radius: 32px;
+      box-shadow: 0 6px 14px #cbdad0;
+    }
+    .feature-item i {
+      font-size: 2.2rem;
+      color: var(--pine);
+      background: white;
+      padding: 1rem;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px #b9cfc2;
+    }
+
+    /* about + mission */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 280px;
+    }
+    .about-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .mission-list {
+      flex: 1;
+      background: #e5f0ea;
+      padding: 2rem;
+      border-radius: 40px;
+    }
+    .mission-list ul {
+      list-style: none;
+    }
+    .mission-list li {
+      margin: 1.2rem 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .mission-list i {
+      color: var(--moss);
+      font-size: 1.8rem;
+    }
+
+    /* tour packages */
+    .tour-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .tour-card {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: 0 12px 26px #cdddd4;
+      border: 1px solid rgba(55,110,80,0.2);
+    }
+    .tour-card h3 {
+      color: var(--pine);
+      font-size: 1.9rem;
+      border-bottom: 2px dashed var(--leaf);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .tour-day {
+      display: flex;
+      gap: 1rem;
+      margin: 0.8rem 0;
+      border-left: 3px solid var(--warm);
+      padding-left: 1rem;
+    }
+    .tour-day strong {
+      min-width: 70px;
+      color: var(--moss);
+    }
+
+    /* services icons */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .service-icon {
+      background: white;
+      border-radius: 48px;
+      padding: 2rem 1rem;
+      transition: 0.2s;
+    }
+    .service-icon i {
+      font-size: 3rem;
+      color: var(--leaf);
+      margin-bottom: 0.8rem;
+    }
+    .service-icon h4 {
+      font-size: 1.5rem;
+      color: var(--pine);
+    }
+
+    /* contact section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px #bacfc3;
+    }
+    .contact-item i {
+      font-size: 2rem;
+      color: var(--moss);
+      width: 2.5rem;
+    }
+    .contact-item p {
+      font-size: 1.15rem;
+    }
+
+    /* Instagram widget area */
+    .instagram-embed {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px #bacfc3;
+      margin-top: 2rem;
+    }
+
+    /* quick links footer */
+    footer {
+      background: #1d3d31;
+      color: #ddddd0;
+      padding: 3rem 5% 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-grid a {
+      color: #e2efd6;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .footer-grid a:hover {
+      color: var(--warm);
+    }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #3f6b58;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      color: #bbccbb;
+    }
+
+    /* Floating multi-WhatsApp widget */
+    .whatsapp-multi {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .whatsapp-main {
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .whatsapp-main:hover {
+      background: #128C7E;
+      transform: scale(1.1);
+    }
+    .whatsapp-options {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .whatsapp-multi.open .whatsapp-options {
+      display: flex;
+    }
+    .whatsapp-option {
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: 0.2s;
+    }
+    .whatsapp-option:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+    .whatsapp-option i {
+      font-size: 1.4rem;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0 0.5rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Meghalaya <span>Nomad Tours</span></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#about">About</a>
+      <a href="#tours">Tours</a>
+      <a href="#services">Services</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero section (home) -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Meghalaya Nomad Tours</h1>
+      <p>Explore the natural beauty of Meghalaya — dive into culturally rich landscapes with local tribal guides.</p>
+      <p style="font-size:1.3rem; margin-top:-0.5rem;">📞 9436332798 / 9863094091 / 8132018842</p>
+      <p style="font-size:1.3rem;">📷 Instagram: @meghalaya533</p>
+      <a href="#contact" class="btn"><i class="fas fa-phone-alt"></i> Contact Us</a>
+      <a href="#tours" class="btn btn-outline" style="border-color: white; color: white;">View tours</a>
+    </div>
+  </section>
+
+  <!-- Popular destinations & activities -->
+  <section id="destinations">
+    <div class="container">
+      <h2>Popular Destinations & Activities</h2>
+      <div class="grid-4">
+        <div class="card"><i class="fas fa-tree"></i><h3>Living Root Bridge</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+        <div class="card"><i class="fas fa-pagelines"></i><h3>Kaziranga</h3><div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div></div>
+        <div class="card"><i class="fas fa-hiking"></i><h3>Trekking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+        <div class="card"><i class="fas fa-mountain"></i><h3>Hiking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#" class="btn btn-outline"><i class="fas fa-compass"></i> View our Destinations and Activities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local guides / preparations / help (features) -->
+  <section style="background: #ecf5f0;">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item"><i class="fas fa-user-tie"></i><h3>Local Guides</h3><p>We have expert local guides who are here to guide and give you more insights into the locations that you visit.</p></div>
+        <div class="feature-item"><i class="fas fa-umbrella-beach"></i><h3>All preparations taken care of</h3><p>We try our very best to take care of most things so that you can do what’s important most – have a memorable time.</p></div>
+        <div class="feature-item"><i class="fas fa-life-ring"></i><h3>Need help?</h3><p>We are here to answer your queries via phone call, WhatsApp or email.</p></div>
+        <div class="feature-item"><i class="fas fa-graduation-cap"></i><h3>Educational Tourism</h3><p>Travel with us and get insights into not just the amazing views but also the lore of various locations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About + mission together -->
+  <section id="about">
+    <div class="container about-wrap">
+      <div class="about-text">
+        <h2>About us</h2>
+        <p><strong>Meghalaya Nomad Tours</strong> is a travel company based in Sohra (Cherrapunjee), Meghalaya. It was founded in 2022 by a youth born and brought up in these hills.</p>
+        <p>After 5-6 years as a guide exploring Meghalaya and beyond, he started this company with an aim to lend a helping hand to any traveller who wants to visit Meghalaya. Our team is comprised of local individuals with deep knowledge of the locations.</p>
+        <p><i class="fas fa-people-arrows" style="color:var(--moss);"></i> <strong>Amazing Teams:</strong> local experts who make your journey special.</p>
+        <a href="#contact" class="btn" style="margin-top:1rem;">Contact Us</a>
+      </div>
+      <div class="mission-list">
+        <h3 style="color:var(--pine); margin-bottom:1.2rem;">Our Mission & Vision</h3>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> To provide our guests with memorable experiences</li>
+          <li><i class="fas fa-check-circle"></i> Bring more cultural awareness to outsiders</li>
+          <li><i class="fas fa-check-circle"></i> To help wanderers explore Meghalaya and its beauty</li>
+          <li><i class="fas fa-check-circle"></i> Connect with the locals</li>
+        </ul>
+        <p style="margin-top:1.5rem; font-style:italic;">“SOME INSIGHTS — founded by local youth”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour packages (itineraries) -->
+  <section id="tours" style="background:#e7f2ec;">
+    <div class="container">
+      <h2>Popular Meghalaya Tours</h2>
+      <div class="tour-cards">
+        <!-- classic 7 day -->
+        <div class="tour-card">
+          <h3>🌄 Classic Meghalaya</h3>
+          <p><strong>7 Days | Guwahati to Guwahati</strong></p>
+          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong (120 km)</div>
+          <div class="tour-day"><strong>Day 2:</strong> Shillong → Shongpeng (115 km)</div>
+          <div class="tour-day"><strong>Day 3:</strong> Shongpeng → Pynursla</div>
+          <div class="tour-day"><strong>Day 4:</strong> Mawryngkhang trek (Bamboo trail)</div>
+          <div class="tour-day"><strong>Day 5:</strong> Sohra sightseeing – trek to Double Decker</div>
+          <div class="tour-day"><strong>Day 6:</strong> Double Decker → Shillong (70 km)</div>
+          <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
+          <a href="#contact" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- semi offbeat + kaziranga -->
+        <div class="tour-card">
+          <h3>🏕️ Semi Offbeat + Kaziranga</h3>
+          <p><strong>8 Days | Guwahati – Meghalaya – Kaziranga</strong></p>
+          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong (120 km)</div>
+          <div class="tour-day"><strong>Day 2:</strong> Shillong → Shongpeng</div>
+          <div class="tour-day"><strong>Day 3:</strong> Shongpeng → Pynursla</div>
+          <div class="tour-day"><strong>Day 4:</strong> Mawryngkhang trek (Bamboo trail)</div>
+          <div class="tour-day"><strong>Day 5:</strong> Sohra sightseeing – trek to Double Decker</div>
+          <div class="tour-day"><strong>Day 6:</strong> Double Decker → Shillong</div>
+          <div class="tour-day"><strong>Day 7:</strong> Drive to Kaziranga, overnight</div>
+          <div class="tour-day"><strong>Day 8:</strong> Jeep safari, airport drop</div>
+          <a href="#contact" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- Cave exploration teaser -->
+        <div class="tour-card">
+          <h3>🪨 Cave Exploration</h3>
+          <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
+          <div style="background: #cde3d8; border-radius: 40px; padding: 1.5rem; text-align: center; margin: 1.5rem 0;">
+            <i class="fas fa-mountain" style="font-size:3rem; color: var(--pine);"></i>
+            <p style="font-size:1.2rem; margin-top:0.5rem;">We also do customized tours! <br> → Trekking, hiking, cultural.</p>
+          </div>
+          <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Contact for custom plan</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View our services / types of tours</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour services (group, family, etc) -->
+  <section id="services">
+    <div class="container">
+      <h2>Tour Services</h2>
+      <div class="services-grid">
+        <div class="service-icon"><i class="fas fa-users"></i><h4>Group Tour</h4></div>
+        <div class="service-icon"><i class="fas fa-heart"></i><h4>Family Tour</h4></div>
+        <div class="service-icon"><i class="fas fa-user-tie"></i><h4>Guided Tour</h4></div>
+        <div class="service-icon"><i class="fas fa-puzzle-piece"></i><h4>Customised Packages</h4></div>
+      </div>
+      <div style="background: #c8e0d4; border-radius: 64px; padding: 3rem; text-align: center; margin-top: 3rem;">
+        <h3 style="font-size:2.5rem; color: var(--pine);">Ready for your next Trip?</h3>
+        <a href="#contact" class="btn" style="margin: 1.5rem auto; font-size: 1.5rem; padding: 1rem 3rem;"><i class="fas fa-envelope"></i> Contact Us!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed (exactly as original) -->
+  <section id="instagram">
+    <div class="container">
+      <h2>Instagram Photo Feed</h2>
+      <p>Latest photos from our Instagram <strong>@meghalaya533</strong>.</p>
+      <div class="instagram-embed">
+        <!-- LightWidget WIDGET - original code -->
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe src="//lightwidget.com/widgets/b6ff7f84411456b99196ae9d45e7ae4c" 
+                scrolling="no" 
+                allowtransparency="true" 
+                class="lightwidget-widget" 
+                style="width:100%; border:0; overflow:hidden;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section with updated address and all numbers -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-item"><i class="fas fa-map-pin"></i> <p><strong>Physical Address</strong><br>Sohra, East Khasi Hills, Meghalaya</p></div>
+        <div class="contact-item"><i class="fas fa-clock"></i> <p><strong>Office hours</strong><br>Mon–Fri: 7am – 7pm<br>Weekend: 10am – 5pm</p></div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> <p><strong>Phone / WhatsApp</strong><br>+91 94363 32798<br>+91 98630 94091<br>+91 81320 18842</p></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <p><strong>Email</strong><br>meghalaya.nomad@gmail.com<br>(normal response)</p></div>
+      </div>
+      <div style="margin-top: 2rem; background: white; border-radius: 32px; padding: 1.5rem; text-align: center;">
+        <p><i class="fas fa-question-circle" style="color: var(--moss);"></i> Have any questions about what we offer? We’ll get back to you ASAP!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer with quick links -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4 style="color: #f0ead0;">Meghalaya Nomad Tours</h4>
+        <p style="color:#bcd5c0;">Local tribal tour operator since 2022</p>
+        <div style="margin: 1rem 0;">
+          <a href="https://instagram.com/meghalaya533" target="_blank"><i class="fab fa-instagram"></i> Follow us on Instagram!</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About us</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#contact">Contact Page</a>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <p>📞 9436332798</p>
+        <p>📞 9863094091</p>
+        <p>📞 8132018842</p>
+        <p>⏰ 7AM - 5PM (help line)</p>
+        <p>📧 meghalaya.nomad@gmail.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© Meghalaya Nomad Tours 2022 – Website inspired by local stories</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp widget with direct messaging for all numbers -->
+  <div class="whatsapp-multi">
+    <div class="whatsapp-main" id="whatsappToggle">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-options" id="whatsappOptions">
+      <a href="https://wa.me/919436332798" target="_blank" class="whatsapp-option">
+        <i class="fab fa-whatsapp"></i> +91 94363 32798
+      </a>
+      <a href="https://wa.me/919863094091" target="_blank" class="whatsapp-option">
+        <i class="fab fa-whatsapp"></i> +91 98630 94091
+      </a>
+      <a href="https://wa.me/918132018842" target="_blank" class="whatsapp-option">
+        <i class="fab fa-whatsapp"></i> +91 81320 18842
+      </a>
+    </div>
+  </div>
+
+  <!-- mobile menu toggle and WhatsApp toggle scripts -->
+  <script>
+    // Mobile menu toggle
+    const toggleBtn = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
+
+    // WhatsApp multi-number toggle
+    const whatsappToggle = document.getElementById('whatsappToggle');
+    const whatsappMulti = document.querySelector('.whatsapp-multi');
+
+    if (whatsappToggle) {
+      whatsappToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        whatsappMulti.classList.toggle('open');
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (whatsappMulti && !whatsappMulti.contains(e.target)) {
+        whatsappMulti.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
+```
+
+
+
+
+✅ Features included:
+
+· Brand name: Meghalaya Nomad Tours
+· Phone numbers: 9436332798, 9863094091, 8132018842 (displayed in hero, contact, footer, and WhatsApp widget)
+· Instagram widget: Exact LightWidget code for @meghalaya533
+· WhatsApp widget: Floating button that expands to show all three numbers – clicking any opens direct WhatsApp chat
+· Updated address: Sohra, East Khasi Hills, Meghalaya
+· Fully responsive with mobile menu
+
+If you need to remove any phone number, simply delete the corresponding line from the hero, contact grid, footer, and WhatsApp options. Let me know if you need further adjustments!

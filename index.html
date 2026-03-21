@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meghalaya Tour Operator | Local tour operator</title>
+  <title>Meghalaya Tour Operator | Local Tribal Tours & Travel Packages in Sohra</title>
+  <meta name="description" content="Book authentic Meghalaya tours with local tribal guides. Explore living root bridges, Dawki, Sohra, and Khasi culture. Customized packages, best prices.">
+  <meta name="keywords" content="Meghalaya tour, Sohra tour, Cherrapunji travel, Dawki boating, living root bridge, Khasi culture, Meghalaya travel agency, local tour guide">
+  <meta name="author" content="Meghalaya Tour Operator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://meghalayatouroperator7.github.io/">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* your existing CSS – unchanged */
     * {
       margin: 0;
       padding: 0;
@@ -172,39 +178,50 @@
       margin: 0.5rem;
     }
 
-    /* Popular Destinations grid (7 items) */
+    /* Destinations grid – supports images */
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
     .card {
       background: white;
       border-radius: 24px;
-      padding: 2rem 1.5rem;
       box-shadow: 0 12px 28px -8px rgba(0,40,20,0.1);
       transition: 0.2s;
       border: 1px solid rgba(60,110,80,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .card:hover {
       transform: scale(1.02);
       box-shadow: 0 18px 32px -8px #1b4d3e33;
     }
-    .card i {
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .card-content i {
       font-size: 2.5rem;
       color: var(--leaf);
       margin-bottom: 1rem;
     }
-    .card h3 {
+    .card-content h3 {
       font-size: 1.6rem;
       color: var(--pine);
       margin-bottom: 0.25rem;
     }
-    .card .location {
+    .card-content .location {
       color: #5e7a6b;
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
 
     .features-grid {
@@ -399,7 +416,7 @@
       color: #bbccbb;
     }
 
-    /* Multi‑WhatsApp widget (expandable) */
+    /* Multi‑WhatsApp widget */
     .whatsapp-multi {
       position: fixed;
       bottom: 20px;
@@ -457,7 +474,7 @@
       font-size: 1.4rem;
     }
 
-    /* Additional floating buttons: Instagram & Call */
+    /* Floating extra buttons */
     .floating-extra {
       position: fixed;
       bottom: 20px;
@@ -516,354 +533,439 @@
       h2 {
         font-size: 2rem;
       }
+      .card-img {
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="logo.png" alt="Meghalaya Tour Operator Logo">
-      <span>Meghalaya Tour Operator <small>Local Tribal Guides</small></span>
+
+<!-- Structured Data (Schema.org) for Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Meghalaya Tour Operator",
+  "description": "Book authentic Meghalaya tours with local tribal guides. Explore living root bridges, Dawki, Sohra, and Khasi culture. Customized packages, best prices.",
+  "url": "https://meghalayatouroperator7.github.io/",
+  "telephone": "+919863094091",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sohra",
+    "addressLocality": "East Khasi Hills",
+    "addressRegion": "Meghalaya",
+    "postalCode": "793108",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "25.2833",
+    "longitude": "91.7167"
+  },
+  "image": "https://meghalayatouroperator7.github.io/logo.png",
+  "priceRange": "₹₹",
+  "openingHours": "Mo-Fr 07:00-19:00, Sa-Su 10:00-17:00"
+}
+</script>
+
+<nav>
+  <div class="logo">
+    <img src="logo.png" alt="Meghalaya Tour Operator Logo">
+    <span>Meghalaya Tour Operator <small>Local Tribal Guides</small></span>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#about">About</a>
+    <a href="#tours">Tours</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Meghalaya Tour Operator</h1>
+    <p>Explore the natural beauty of Meghalaya — dive into culturally rich landscapes with local tribal guides.</p>
+    <p style="font-size:1.3rem; margin-top:-0.5rem;">📞 9436332798 / 9863094091 / 8132018842</p>
+    <p style="font-size:1.3rem;">📷 Instagram: @meghalaya533</p>
+    <a href="#contact" class="btn"><i class="fas fa-phone-alt"></i> Contact Us</a>
+    <a href="#tours" class="btn btn-outline" style="border-color: white; color: white;">View tours</a>
+  </div>
+</section>
+
+<!-- Destinations -->
+<section id="destinations">
+  <div class="container">
+    <h2>Popular Destinations & Activities</h2>
+    <div class="grid-4">
+      <!-- Living Root Bridge – with image -->
+      <div class="card">
+        <img class="card-img" src="living-root.jpg" alt="Living root bridge in Meghalaya">
+        <div class="card-content">
+          <i class="fas fa-tree"></i>
+          <h3>Living Root Bridge</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
+        </div>
+      </div>
+      <!-- Rhino Site Seeing – with image -->
+      <div class="card">
+        <img class="card-img" src="rhino.jpg" alt="One-horned rhinoceros in Kaziranga">
+        <div class="card-content">
+          <i class="fas fa-pagelines"></i>
+          <h3>Rhino Site Seeing</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div>
+        </div>
+      </div>
+      <!-- Trekking – icon only -->
+      <div class="card">
+        <div class="card-content">
+          <i class="fas fa-hiking"></i>
+          <h3>Trekking</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
+        </div>
+      </div>
+      <!-- Hiking – icon only -->
+      <div class="card">
+        <div class="card-content">
+          <i class="fas fa-mountain"></i>
+          <h3>Hiking</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
+        </div>
+      </div>
+      <!-- Caving – icon only -->
+      <div class="card">
+        <div class="card-content">
+          <i class="fas fa-water"></i>
+          <h3>Caving</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
+        </div>
+      </div>
+      <!-- Experience Khasi & Garo Cultures – with image -->
+      <div class="card">
+        <img class="card-img" src="khasi-culture.jpg" alt="Khasi traditional dance and culture">
+        <div class="card-content">
+          <i class="fas fa-people-arrows"></i>
+          <h3>Experience Khasi & Garo Cultures</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
+        </div>
+      </div>
+      <!-- Experience Rainfall Under Tin Roof – with image -->
+      <div class="card">
+        <img class="card-img" src="rain-tin-roof.jpg" alt="Experience the famous rainfall under tin roof in Sohra">
+        <div class="card-content">
+          <i class="fas fa-umbrella"></i>
+          <h3>Experience Rainfall Under Tin Roof</h3>
+          <div class="location"><i class="fas fa-map-pin"></i> Shella Area, Meghalaya</div>
+        </div>
+      </div>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
-    <div class="nav-links" id="navLinks">
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="#" class="btn btn-outline"><i class="fas fa-compass"></i> View our Destinations and Activities</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section style="background: #ecf5f0;">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item"><i class="fas fa-user-tie"></i><h3>Local Guides</h3><p>We have expert local guides who are here to guide and give you more insights into the locations that you visit.</p></div>
+      <div class="feature-item"><i class="fas fa-umbrella-beach"></i><h3>All preparations taken care of</h3><p>We try our very best to take care of most things so that you can do what’s important most – have a memorable time.</p></div>
+      <div class="feature-item"><i class="fas fa-life-ring"></i><h3>Need help?</h3><p>We are here to answer your queries via phone call, WhatsApp or email.</p></div>
+      <div class="feature-item"><i class="fas fa-graduation-cap"></i><h3>Educational Tourism</h3><p>Travel with us and get insights into not just the amazing views but also the lore of various locations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- About + Mission -->
+<section id="about">
+  <div class="container about-wrap">
+    <div class="about-text">
+      <h2>About us</h2>
+      <p><strong>Meghalaya Tour Operator</strong> is a travel company based in Sohra (Cherrapunjee), Meghalaya – the world's heaviest rainfall place on earth. It was founded by the seven brothers of the Dienhdoh family who reside in this region.</p>
+      <p>After years of experience as guides exploring Meghalaya and beyond, the brothers started this company with an aim to lend a helping hand to any traveller who wants to visit Meghalaya. Our team is comprised of local individuals with deep knowledge of the locations.</p>
+      <p><i class="fas fa-people-arrows" style="color:var(--moss);"></i> <strong>Amazing Teams:</strong> local experts who make your journey special.</p>
+      <a href="#contact" class="btn" style="margin-top:1rem;">Contact Us</a>
+    </div>
+    <div class="mission-list">
+      <h3 style="color:var(--pine); margin-bottom:1.2rem;">Our Mission & Vision</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> To provide our guests with memorable experiences</li>
+        <li><i class="fas fa-check-circle"></i> Bring more cultural awareness to outsiders</li>
+        <li><i class="fas fa-check-circle"></i> To help wanderers explore Meghalaya and its beauty</li>
+        <li><i class="fas fa-check-circle"></i> Connect with the locals</li>
+      </ul>
+      <p style="margin-top:1.5rem; font-style:italic;">“SOME INSIGHTS — founded by local youth”</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tour Packages -->
+<section id="tours" style="background:#e7f2ec;">
+  <div class="container">
+    <h2>Popular Meghalaya Tours</h2>
+    <div class="tour-cards">
+      <!-- Classic Meghalaya -->
+      <div class="tour-card">
+        <h3>🌄 Classic Meghalaya</h3>
+        <p><strong>7 Days | Guwahati to Guwahati</strong></p>
+        <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong</div>
+        <div class="tour-day"><strong>Day 2:</strong> Shillong → Dawki</div>
+        <div class="tour-day"><strong>Day 3:</strong> Dawki → Sohra</div>
+        <div class="tour-day"><strong>Day 4:</strong> Sohra → Jowai</div>
+        <div class="tour-day"><strong>Day 5:</strong> Jowai → Khliehriat</div>
+        <div class="tour-day"><strong>Day 6:</strong> Khliehriat → Krangsuri</div>
+        <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
+        <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <!-- Semi Offbeat + Kaziranga -->
+      <div class="tour-card">
+        <h3>🏕️ Semi Offbeat + Kaziranga</h3>
+        <p><strong>8 Days | Guwahati – Meghalaya – Kaziranga</strong></p>
+        <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong (120 km)</div>
+        <div class="tour-day"><strong>Day 2:</strong> Shillong → Shongpeng</div>
+        <div class="tour-day"><strong>Day 3:</strong> Shongpeng → Pynursla</div>
+        <div class="tour-day"><strong>Day 4:</strong> Mawryngkhang trek (Bamboo trail)</div>
+        <div class="tour-day"><strong>Day 5:</strong> Sohra sightseeing – trek to Double Decker</div>
+        <div class="tour-day"><strong>Day 6:</strong> Double Decker → Shillong</div>
+        <div class="tour-day"><strong>Day 7:</strong> Drive to Kaziranga, overnight</div>
+        <div class="tour-day"><strong>Day 8:</strong> Jeep safari, airport drop</div>
+        <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <!-- Cave Exploration -->
+      <div class="tour-card">
+        <h3>🪨 Cave Exploration</h3>
+        <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
+        <div style="background: #cde3d8; border-radius: 40px; padding: 1.5rem; text-align: center; margin: 1.5rem 0;">
+          <i class="fas fa-mountain" style="font-size:3rem; color: var(--pine);"></i>
+          <p style="font-size:1.2rem; margin-top:0.5rem;">We also do customized tours! <br> → Trekking, hiking, cultural.</p>
+        </div>
+        <a href="#booking" class="btn btn-outline" style="width:100%; text-align:center;">Contact for custom plan</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View our services / types of tours</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <h2>Tour Services</h2>
+    <div class="services-grid">
+      <div class="service-icon"><i class="fas fa-users"></i><h4>Group Tour</h4></div>
+      <div class="service-icon"><i class="fas fa-heart"></i><h4>Family Tour</h4></div>
+      <div class="service-icon"><i class="fas fa-user-tie"></i><h4>Guided Tour</h4></div>
+      <div class="service-icon"><i class="fas fa-puzzle-piece"></i><h4>Customised Packages</h4></div>
+    </div>
+    <div style="background: #c8e0d4; border-radius: 64px; padding: 3rem; text-align: center; margin-top: 3rem;">
+      <h3 style="font-size:2.5rem; color: var(--pine);">Ready for your next Trip?</h3>
+      <a href="#booking" class="btn" style="margin: 1.5rem auto; font-size: 1.5rem; padding: 1rem 3rem;"><i class="fas fa-envelope"></i> Book Now!</a>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section id="booking">
+  <div class="container">
+    <h2>Online Booking</h2>
+    <div class="booking-form">
+      <form action="https://formsubmit.co/cd8c0fb372daff4177ce653df9452db4" method="POST">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Thank you for your booking request! Your reference number is {ref}. We'll get back to you within 24 hours with availability and payment details.">
+        <input type="hidden" id="bookingRef" name="ref" value="">
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+          <option value="">-- Select a service --</option>
+          <option value="Classic Meghalaya Tour">Classic Meghalaya Tour (7 days)</option>
+          <option value="Semi Offbeat + Kaziranga Tour">Semi Offbeat + Kaziranga Tour (8 days)</option>
+          <option value="Cave Exploration">Cave Exploration (Custom)</option>
+          <option value="Nongriat Homestay">Nongriat Homestay</option>
+          <option value="Mawphanlur Lake Homestay">Mawphanlur Lake Homestay</option>
+          <option value="Shnongpdeng Riverside Camp">Shnongpdeng Riverside Camp</option>
+          <option value="Custom Tour Package">Custom Tour Package</option>
+        </select>
+
+        <label for="budget">Approximate Budget (INR per person)</label>
+        <select id="budget" name="budget" required>
+          <option value="">-- Select your budget range --</option>
+          <option value="Under ₹5,000">Under ₹5,000 (Budget)</option>
+          <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000 (Economy)</option>
+          <option value="₹10,000 - ₹15,000">₹10,000 - ₹15,000 (Standard)</option>
+          <option value="₹15,000 - ₹20,000">₹15,000 - ₹20,000 (Premium)</option>
+          <option value="Above ₹20,000">Above ₹20,000 (Luxury)</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?"></textarea>
+
+        <button type="submit" class="btn">Submit Booking</button>
+      </form>
+
+      <div class="payment-info">
+        <h3>Payment Options</h3>
+        <p><strong>UPI:</strong> neizthangkhiew00@oksbi</p>
+        <p><strong>PayPal / Card:</strong> Available for international tourists (ask us for details)</p>
+        <p style="font-size:0.9rem; margin-top:0.5rem;">We'll confirm availability and share payment instructions after receiving your booking request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Feed -->
+<section id="instagram">
+  <div class="container">
+    <h2>Instagram Photo Feed</h2>
+    <p>Latest photos from our Instagram <strong>@meghalaya533</strong>.</p>
+    <div class="instagram-embed">
+      <!-- LightWidget WIDGET -->
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      <iframe src="//lightwidget.com/widgets/b38022b8f8e353209620e48f2992434e.html"
+              scrolling="no"
+              allowtransparency="true"
+              class="lightwidget-widget"
+              style="width:100%; border:0; overflow:hidden;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-item"><i class="fas fa-map-pin"></i> <p><strong>Physical Address</strong><br>Sohra (Cherrapunji) – The World's Heaviest Rainfall Place on Planet Earth<br>East Khasi Hills, Meghalaya 793108</p></div>
+      <div class="contact-item"><i class="fas fa-clock"></i> <p><strong>Office hours</strong><br>Mon–Fri: 7am – 7pm<br>Weekend: 10am – 5pm</p></div>
+      <div class="contact-item"><i class="fas fa-phone-alt"></i> <p><strong>Phone / WhatsApp</strong><br>+91 98630 94091<br><span style="font-size:0.9rem;">(Super Fast Response Time)</span></p></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <p><strong>Email</strong><br>diper6916@gmail.com<br>(normal response)</p></div>
+    </div>
+    <div style="margin-top: 2rem; background: white; border-radius: 32px; padding: 1.5rem; text-align: center;">
+      <p><i class="fas fa-question-circle" style="color: var(--moss);"></i> Have any questions about what we offer? We’ll get back to you ASAP!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4 style="color: #f0ead0;">Meghalaya Tour Operator</h4>
+      <p style="color:#bcd5c0;">Local tribal tour operator since 2022</p>
+      <div style="margin: 1rem 0;">
+        <a href="https://www.instagram.com/meghalaya533/" target="_blank"><i class="fab fa-instagram"></i> Follow us on Instagram!</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
       <a href="#home">Home</a>
+      <a href="#about">About us</a>
       <a href="#destinations">Destinations</a>
-      <a href="#about">About</a>
-      <a href="#tours">Tours</a>
-      <a href="#services">Services</a>
       <a href="#booking">Booking</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact Page</a>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1>Meghalaya Tour Operator</h1>
-      <p>Explore the natural beauty of Meghalaya — dive into culturally rich landscapes with local tribal guides.</p>
-      <p style="font-size:1.3rem; margin-top:-0.5rem;">📞 9436332798 / 9863094091 / 8132018842</p>
-      <p style="font-size:1.3rem;">📷 Instagram: @meghalaya533</p>
-      <a href="#contact" class="btn"><i class="fas fa-phone-alt"></i> Contact Us</a>
-      <a href="#tours" class="btn btn-outline" style="border-color: white; color: white;">View tours</a>
-    </div>
-  </section>
-
-  <!-- Destinations (updated with new activities) -->
-  <section id="destinations">
-    <div class="container">
-      <h2>Popular Destinations & Activities</h2>
-      <div class="grid-4">
-        <div class="card"><i class="fas fa-tree"></i><h3>Living Root Bridge</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-pagelines"></i><h3>Rhino Site Seeing</h3><div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div></div>
-        <div class="card"><i class="fas fa-hiking"></i><h3>Trekking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-mountain"></i><h3>Hiking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-water"></i><h3>Caving</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-people-arrows"></i><h3>Experience Khasi & Garo Cultures</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-umbrella"></i><h3>Experience Rainfall Under Tin Roof</h3><div class="location"><i class="fas fa-map-pin"></i> Shella Area, Meghalaya</div></div>
-      </div>
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="#" class="btn btn-outline"><i class="fas fa-compass"></i> View our Destinations and Activities</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section style="background: #ecf5f0;">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-item"><i class="fas fa-user-tie"></i><h3>Local Guides</h3><p>We have expert local guides who are here to guide and give you more insights into the locations that you visit.</p></div>
-        <div class="feature-item"><i class="fas fa-umbrella-beach"></i><h3>All preparations taken care of</h3><p>We try our very best to take care of most things so that you can do what’s important most – have a memorable time.</p></div>
-        <div class="feature-item"><i class="fas fa-life-ring"></i><h3>Need help?</h3><p>We are here to answer your queries via phone call, WhatsApp or email.</p></div>
-        <div class="feature-item"><i class="fas fa-graduation-cap"></i><h3>Educational Tourism</h3><p>Travel with us and get insights into not just the amazing views but also the lore of various locations.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About + Mission -->
-  <section id="about">
-    <div class="container about-wrap">
-      <div class="about-text">
-        <h2>About us</h2>
-        <p><strong>Meghalaya Tour Operator</strong> is a travel company based in Sohra (Cherrapunjee), Meghalaya – the world's heaviest rainfall place on earth. It was founded by the seven brothers of the Dienhdoh family who reside in this region.</p>
-        <p>After years of experience as guides exploring Meghalaya and beyond, the brothers started this company with an aim to lend a helping hand to any traveller who wants to visit Meghalaya. Our team is comprised of local individuals with deep knowledge of the locations.</p>
-        <p><i class="fas fa-people-arrows" style="color:var(--moss);"></i> <strong>Amazing Teams:</strong> local experts who make your journey special.</p>
-        <a href="#contact" class="btn" style="margin-top:1rem;">Contact Us</a>
-      </div>
-      <div class="mission-list">
-        <h3 style="color:var(--pine); margin-bottom:1.2rem;">Our Mission & Vision</h3>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> To provide our guests with memorable experiences</li>
-          <li><i class="fas fa-check-circle"></i> Bring more cultural awareness to outsiders</li>
-          <li><i class="fas fa-check-circle"></i> To help wanderers explore Meghalaya and its beauty</li>
-          <li><i class="fas fa-check-circle"></i> Connect with the locals</li>
-        </ul>
-        <p style="margin-top:1.5rem; font-style:italic;">“SOME INSIGHTS — founded by local youth”</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tour Packages (updated Classic itinerary) -->
-  <section id="tours" style="background:#e7f2ec;">
-    <div class="container">
-      <h2>Popular Meghalaya Tours</h2>
-      <div class="tour-cards">
-        <!-- Classic Meghalaya (updated) -->
-        <div class="tour-card">
-          <h3>🌄 Classic Meghalaya</h3>
-          <p><strong>7 Days | Guwahati to Guwahati</strong></p>
-          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong</div>
-          <div class="tour-day"><strong>Day 2:</strong> Shillong → Dawki</div>
-          <div class="tour-day"><strong>Day 3:</strong> Dawki → Sohra</div>
-          <div class="tour-day"><strong>Day 4:</strong> Sohra → Jowai</div>
-          <div class="tour-day"><strong>Day 5:</strong> Jowai → Khliehriat</div>
-          <div class="tour-day"><strong>Day 6:</strong> Khliehriat → Krangsuri</div>
-          <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
-          <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Semi Offbeat + Kaziranga (unchanged) -->
-        <div class="tour-card">
-          <h3>🏕️ Semi Offbeat + Kaziranga</h3>
-          <p><strong>8 Days | Guwahati – Meghalaya – Kaziranga</strong></p>
-          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong (120 km)</div>
-          <div class="tour-day"><strong>Day 2:</strong> Shillong → Shongpeng</div>
-          <div class="tour-day"><strong>Day 3:</strong> Shongpeng → Pynursla</div>
-          <div class="tour-day"><strong>Day 4:</strong> Mawryngkhang trek (Bamboo trail)</div>
-          <div class="tour-day"><strong>Day 5:</strong> Sohra sightseeing – trek to Double Decker</div>
-          <div class="tour-day"><strong>Day 6:</strong> Double Decker → Shillong</div>
-          <div class="tour-day"><strong>Day 7:</strong> Drive to Kaziranga, overnight</div>
-          <div class="tour-day"><strong>Day 8:</strong> Jeep safari, airport drop</div>
-          <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Cave Exploration (unchanged) -->
-        <div class="tour-card">
-          <h3>🪨 Cave Exploration</h3>
-          <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
-          <div style="background: #cde3d8; border-radius: 40px; padding: 1.5rem; text-align: center; margin: 1.5rem 0;">
-            <i class="fas fa-mountain" style="font-size:3rem; color: var(--pine);"></i>
-            <p style="font-size:1.2rem; margin-top:0.5rem;">We also do customized tours! <br> → Trekking, hiking, cultural.</p>
-          </div>
-          <a href="#booking" class="btn btn-outline" style="width:100%; text-align:center;">Contact for custom plan</a>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View our services / types of tours</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2>Tour Services</h2>
-      <div class="services-grid">
-        <div class="service-icon"><i class="fas fa-users"></i><h4>Group Tour</h4></div>
-        <div class="service-icon"><i class="fas fa-heart"></i><h4>Family Tour</h4></div>
-        <div class="service-icon"><i class="fas fa-user-tie"></i><h4>Guided Tour</h4></div>
-        <div class="service-icon"><i class="fas fa-puzzle-piece"></i><h4>Customised Packages</h4></div>
-      </div>
-      <div style="background: #c8e0d4; border-radius: 64px; padding: 3rem; text-align: center; margin-top: 3rem;">
-        <h3 style="font-size:2.5rem; color: var(--pine);">Ready for your next Trip?</h3>
-        <a href="#booking" class="btn" style="margin: 1.5rem auto; font-size: 1.5rem; padding: 1rem 3rem;"><i class="fas fa-envelope"></i> Book Now!</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking Section -->
-  <section id="booking">
-    <div class="container">
-      <h2>Online Booking</h2>
-      <div class="booking-form">
-        <form action="https://formsubmit.co/cd8c0fb372daff4177ce653df9452db4" method="POST">
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_autoresponse" value="Thank you for your booking request! Your reference number is {ref}. We'll get back to you within 24 hours with availability and payment details.">
-          <input type="hidden" id="bookingRef" name="ref" value="">
-
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" required>
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="service">Select Service</label>
-          <select id="service" name="service" required>
-            <option value="">-- Select a service --</option>
-            <option value="Classic Meghalaya Tour">Classic Meghalaya Tour (7 days)</option>
-            <option value="Semi Offbeat + Kaziranga Tour">Semi Offbeat + Kaziranga Tour (8 days)</option>
-            <option value="Cave Exploration">Cave Exploration (Custom)</option>
-            <option value="Nongriat Homestay">Nongriat Homestay</option>
-            <option value="Mawphanlur Lake Homestay">Mawphanlur Lake Homestay</option>
-            <option value="Shnongpdeng Riverside Camp">Shnongpdeng Riverside Camp</option>
-            <option value="Custom Tour Package">Custom Tour Package</option>
-          </select>
-
-          <label for="budget">Approximate Budget (INR per person)</label>
-          <select id="budget" name="budget" required>
-            <option value="">-- Select your budget range --</option>
-            <option value="Under ₹5,000">Under ₹5,000 (Budget)</option>
-            <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000 (Economy)</option>
-            <option value="₹10,000 - ₹15,000">₹10,000 - ₹15,000 (Standard)</option>
-            <option value="₹15,000 - ₹20,000">₹15,000 - ₹20,000 (Premium)</option>
-            <option value="Above ₹20,000">Above ₹20,000 (Luxury)</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?"></textarea>
-
-          <button type="submit" class="btn">Submit Booking</button>
-        </form>
-
-        <div class="payment-info">
-          <h3>Payment Options</h3>
-          <p><strong>UPI:</strong> neizthangkhiew00@oksbi</p>
-          <p><strong>PayPal / Card:</strong> Available for international tourists (ask us for details)</p>
-          <p style="font-size:0.9rem; margin-top:0.5rem;">We'll confirm availability and share payment instructions after receiving your booking request.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instagram Feed -->
-  <section id="instagram">
-    <div class="container">
-      <h2>Instagram Photo Feed</h2>
-      <p>Latest photos from our Instagram <strong>@meghalaya533</strong>.</p>
-      <div class="instagram-embed">
-        <!-- LightWidget WIDGET -->
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="//lightwidget.com/widgets/b38022b8f8e353209620e48f2992434e.html"
-                scrolling="no"
-                allowtransparency="true"
-                class="lightwidget-widget"
-                style="width:100%; border:0; overflow:hidden;"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <div class="contact-grid">
-        <div class="contact-item"><i class="fas fa-map-pin"></i> <p><strong>Physical Address</strong><br>Sohra (Cherrapunji) – The World's Heaviest Rainfall Place on Planet Earth<br>East Khasi Hills, Meghalaya 793108</p></div>
-        <div class="contact-item"><i class="fas fa-clock"></i> <p><strong>Office hours</strong><br>Mon–Fri: 7am – 7pm<br>Weekend: 10am – 5pm</p></div>
-        <div class="contact-item"><i class="fas fa-phone-alt"></i> <p><strong>Phone / WhatsApp</strong><br>+91 98630 94091<br><span style="font-size:0.9rem;">(Super Fast Response Time)</span></p></div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> <p><strong>Email</strong><br>diper6916@gmail.com<br>(normal response)</p></div>
-      </div>
-      <div style="margin-top: 2rem; background: white; border-radius: 32px; padding: 1.5rem; text-align: center;">
-        <p><i class="fas fa-question-circle" style="color: var(--moss);"></i> Have any questions about what we offer? We’ll get back to you ASAP!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4 style="color: #f0ead0;">Meghalaya Tour Operator</h4>
-        <p style="color:#bcd5c0;">Local tribal tour operator since 2022</p>
-        <div style="margin: 1rem 0;">
-          <a href="https://www.instagram.com/meghalaya533/" target="_blank"><i class="fab fa-instagram"></i> Follow us on Instagram!</a>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#about">About us</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#booking">Booking</a>
-        <a href="#contact">Contact Page</a>
-      </div>
-      <div>
-        <h4>Contact Info</h4>
-        <p>📞 +91 98630 94091</p>
-        <p>⏰ 7AM - 7PM (help line)</p>
-        <p>📧 diper6916@gmail.com</p>
-        <p>📍 Sohra – World's Heaviest Rainfall Place</p>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>© Meghalaya Tour Operator 2022 – Website inspired by local stories</p>
-    </div>
-  </footer>
-
-  <!-- Multi‑WhatsApp widget -->
-  <div class="whatsapp-multi">
-    <div class="whatsapp-main" id="whatsappToggle">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-    <div class="whatsapp-options" id="whatsappOptions">
-      <a href="https://api.whatsapp.com/send?phone=919436332798" target="_blank" class="whatsapp-option">
-        <i class="fab fa-whatsapp"></i> +91 94363 32798
-      </a>
-      <a href="https://api.whatsapp.com/send?phone=919863094091" target="_blank" class="whatsapp-option">
-        <i class="fab fa-whatsapp"></i> +91 98630 94091
-      </a>
-      <a href="https://api.whatsapp.com/send?phone=918132018842" target="_blank" class="whatsapp-option">
-        <i class="fab fa-whatsapp"></i> +91 81320 18842
-      </a>
+    <div>
+      <h4>Contact Info</h4>
+      <p>📞 +91 98630 94091</p>
+      <p>⏰ 7AM - 7PM (help line)</p>
+      <p>📧 diper6916@gmail.com</p>
+      <p>📍 Sohra – World's Heaviest Rainfall Place</p>
     </div>
   </div>
+  <div class="copyright">
+    <p>© Meghalaya Tour Operator 2022 – Website inspired by local stories</p>
+  </div>
+</footer>
 
-  <!-- Additional floating buttons: Instagram & Direct Call -->
-  <div class="floating-extra">
-    <a href="https://www.instagram.com/meghalaya533/" target="_blank" class="btn btn-ig" title="Follow on Instagram">
-      <i class="fab fa-instagram"></i>
+<!-- Multi‑WhatsApp widget -->
+<div class="whatsapp-multi">
+  <div class="whatsapp-main" id="whatsappToggle">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+  <div class="whatsapp-options" id="whatsappOptions">
+    <a href="https://api.whatsapp.com/send?phone=919436332798" target="_blank" class="whatsapp-option">
+      <i class="fab fa-whatsapp"></i> +91 94363 32798
     </a>
-    <a href="tel:+919863094091" class="btn btn-call" title="Call us">
-      <i class="fas fa-phone-alt"></i>
+    <a href="https://api.whatsapp.com/send?phone=919863094091" target="_blank" class="whatsapp-option">
+      <i class="fab fa-whatsapp"></i> +91 98630 94091
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=918132018842" target="_blank" class="whatsapp-option">
+      <i class="fab fa-whatsapp"></i> +91 81320 18842
     </a>
   </div>
+</div>
 
-  <script>
-    // Mobile menu toggle
-    const toggleBtn = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-      });
-    }
+<!-- Additional floating buttons: Instagram & Direct Call -->
+<div class="floating-extra">
+  <a href="https://www.instagram.com/meghalaya533/" target="_blank" class="btn btn-ig" title="Follow on Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="tel:+919863094091" class="btn btn-call" title="Call us">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+</div>
 
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('show');
-        }
-      });
+<script>
+  // Mobile menu toggle
+  const toggleBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
     });
+  }
 
-    // Generate booking reference
-    function generateBookingRef() {
-      const date = new Date();
-      const year = date.getFullYear().toString().slice(-2);
-      const month = (date.getMonth() + 1).toString().padStart(2, '0');
-      const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-      return `MTO-${year}${month}-${random}`;
-    }
-    const refInput = document.getElementById('bookingRef');
-    if (refInput) refInput.value = generateBookingRef();
-
-    // WhatsApp multi‑number toggle
-    const whatsappToggle = document.getElementById('whatsappToggle');
-    const whatsappMulti = document.querySelector('.whatsapp-multi');
-    if (whatsappToggle) {
-      whatsappToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        whatsappMulti.classList.toggle('open');
-      });
-    }
-    document.addEventListener('click', (e) => {
-      if (whatsappMulti && !whatsappMulti.contains(e.target)) {
-        whatsappMulti.classList.remove('open');
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('show');
       }
     });
-  </script>
+  });
+
+  // Generate booking reference
+  function generateBookingRef() {
+    const date = new Date();
+    const year = date.getFullYear().toString().slice(-2);
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+    return `MTO-${year}${month}-${random}`;
+  }
+  const refInput = document.getElementById('bookingRef');
+  if (refInput) refInput.value = generateBookingRef();
+
+  // WhatsApp multi‑number toggle
+  const whatsappToggle = document.getElementById('whatsappToggle');
+  const whatsappMulti = document.querySelector('.whatsapp-multi');
+  if (whatsappToggle) {
+    whatsappToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      whatsappMulti.classList.toggle('open');
+    });
+  }
+  document.addEventListener('click', (e) => {
+    if (whatsappMulti && !whatsappMulti.contains(e.target)) {
+      whatsappMulti.classList.remove('open');
+    }
+  });
+</script>
 </body>
 </html>

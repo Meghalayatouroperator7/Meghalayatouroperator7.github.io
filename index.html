@@ -172,9 +172,10 @@
       margin: 0.5rem;
     }
 
+    /* Popular Destinations grid (7 items) */
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -549,15 +550,18 @@
     </div>
   </section>
 
-  <!-- Destinations -->
+  <!-- Destinations (updated with new activities) -->
   <section id="destinations">
     <div class="container">
       <h2>Popular Destinations & Activities</h2>
       <div class="grid-4">
         <div class="card"><i class="fas fa-tree"></i><h3>Living Root Bridge</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
-        <div class="card"><i class="fas fa-pagelines"></i><h3>Kaziranga</h3><div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div></div>
+        <div class="card"><i class="fas fa-pagelines"></i><h3>Rhino Site Seeing</h3><div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div></div>
         <div class="card"><i class="fas fa-hiking"></i><h3>Trekking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
         <div class="card"><i class="fas fa-mountain"></i><h3>Hiking</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+        <div class="card"><i class="fas fa-water"></i><h3>Caving</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+        <div class="card"><i class="fas fa-people-arrows"></i><h3>Experience Khasi & Garo Cultures</h3><div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div></div>
+        <div class="card"><i class="fas fa-umbrella"></i><h3>Experience Rainfall Under Tin Roof</h3><div class="location"><i class="fas fa-map-pin"></i> Shella Area, Meghalaya</div></div>
       </div>
       <div style="text-align: center; margin-top: 2.5rem;">
         <a href="#" class="btn btn-outline"><i class="fas fa-compass"></i> View our Destinations and Activities</a>
@@ -582,8 +586,8 @@
     <div class="container about-wrap">
       <div class="about-text">
         <h2>About us</h2>
-        <p><strong>Meghalaya Tour Operator</strong> is a travel company based in Sohra (Cherrapunjee), Meghalaya. It was founded in 2022 by a youth born and brought up in these hills.</p>
-        <p>After 5-6 years as a guide exploring Meghalaya and beyond, he started this company with an aim to lend a helping hand to any traveller who wants to visit Meghalaya. Our team is comprised of local individuals with deep knowledge of the locations.</p>
+        <p><strong>Meghalaya Tour Operator</strong> is a travel company based in Sohra (Cherrapunjee), Meghalaya – the world's heaviest rainfall place on earth. It was founded by the seven brothers of the Dienhdoh family who reside in this region.</p>
+        <p>After years of experience as guides exploring Meghalaya and beyond, the brothers started this company with an aim to lend a helping hand to any traveller who wants to visit Meghalaya. Our team is comprised of local individuals with deep knowledge of the locations.</p>
         <p><i class="fas fa-people-arrows" style="color:var(--moss);"></i> <strong>Amazing Teams:</strong> local experts who make your journey special.</p>
         <a href="#contact" class="btn" style="margin-top:1rem;">Contact Us</a>
       </div>
@@ -600,23 +604,25 @@
     </div>
   </section>
 
-  <!-- Tour Packages -->
+  <!-- Tour Packages (updated Classic itinerary) -->
   <section id="tours" style="background:#e7f2ec;">
     <div class="container">
       <h2>Popular Meghalaya Tours</h2>
       <div class="tour-cards">
+        <!-- Classic Meghalaya (updated) -->
         <div class="tour-card">
           <h3>🌄 Classic Meghalaya</h3>
           <p><strong>7 Days | Guwahati to Guwahati</strong></p>
-          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong (120 km)</div>
-          <div class="tour-day"><strong>Day 2:</strong> Shillong → Shongpeng (115 km)</div>
-          <div class="tour-day"><strong>Day 3:</strong> Shongpeng → Pynursla</div>
-          <div class="tour-day"><strong>Day 4:</strong> Mawryngkhang trek (Bamboo trail)</div>
-          <div class="tour-day"><strong>Day 5:</strong> Sohra sightseeing – trek to Double Decker</div>
-          <div class="tour-day"><strong>Day 6:</strong> Double Decker → Shillong (70 km)</div>
+          <div class="tour-day"><strong>Day 1:</strong> Guwahati → Shillong</div>
+          <div class="tour-day"><strong>Day 2:</strong> Shillong → Dawki</div>
+          <div class="tour-day"><strong>Day 3:</strong> Dawki → Sohra</div>
+          <div class="tour-day"><strong>Day 4:</strong> Sohra → Jowai</div>
+          <div class="tour-day"><strong>Day 5:</strong> Jowai → Khliehriat</div>
+          <div class="tour-day"><strong>Day 6:</strong> Khliehriat → Krangsuri</div>
           <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
           <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
         </div>
+        <!-- Semi Offbeat + Kaziranga (unchanged) -->
         <div class="tour-card">
           <h3>🏕️ Semi Offbeat + Kaziranga</h3>
           <p><strong>8 Days | Guwahati – Meghalaya – Kaziranga</strong></p>
@@ -630,6 +636,7 @@
           <div class="tour-day"><strong>Day 8:</strong> Jeep safari, airport drop</div>
           <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
         </div>
+        <!-- Cave Exploration (unchanged) -->
         <div class="tour-card">
           <h3>🪨 Cave Exploration</h3>
           <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
@@ -721,7 +728,7 @@
     </div>
   </section>
 
-  <!-- Instagram Feed (LightWidget) – using username meghalaya533 -->
+  <!-- Instagram Feed -->
   <section id="instagram">
     <div class="container">
       <h2>Instagram Photo Feed</h2>
@@ -743,7 +750,7 @@
     <div class="container">
       <h2>Contact Us</h2>
       <div class="contact-grid">
-        <div class="contact-item"><i class="fas fa-map-pin"></i> <p><strong>Physical Address</strong><br>Nongwar, Shella Bholaganj Block, East Khasi Hills, Meghalaya 793108</p></div>
+        <div class="contact-item"><i class="fas fa-map-pin"></i> <p><strong>Physical Address</strong><br>Sohra (Cherrapunji) – The World's Heaviest Rainfall Place on Planet Earth<br>East Khasi Hills, Meghalaya 793108</p></div>
         <div class="contact-item"><i class="fas fa-clock"></i> <p><strong>Office hours</strong><br>Mon–Fri: 7am – 7pm<br>Weekend: 10am – 5pm</p></div>
         <div class="contact-item"><i class="fas fa-phone-alt"></i> <p><strong>Phone / WhatsApp</strong><br>+91 98630 94091<br><span style="font-size:0.9rem;">(Super Fast Response Time)</span></p></div>
         <div class="contact-item"><i class="fas fa-envelope"></i> <p><strong>Email</strong><br>diper6916@gmail.com<br>(normal response)</p></div>
@@ -777,7 +784,7 @@
         <p>📞 +91 98630 94091</p>
         <p>⏰ 7AM - 7PM (help line)</p>
         <p>📧 diper6916@gmail.com</p>
-        <p>📍 Nongwar, Sohra, Meghalaya</p>
+        <p>📍 Sohra – World's Heaviest Rainfall Place</p>
       </div>
     </div>
     <div class="copyright">
@@ -785,7 +792,7 @@
     </div>
   </footer>
 
-  <!-- Multi‑WhatsApp widget (3 numbers) -->
+  <!-- Multi‑WhatsApp widget -->
   <div class="whatsapp-multi">
     <div class="whatsapp-main" id="whatsappToggle">
       <i class="fab fa-whatsapp"></i>

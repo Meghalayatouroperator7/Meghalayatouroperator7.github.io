@@ -75,6 +75,7 @@
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
+      align-items: center;
     }
     .nav-links a {
       color: white;
@@ -89,6 +90,23 @@
       color: #fde5b4;
     }
 
+    /* Top‑right brand logo */
+    .brand-icon {
+      display: flex;
+      align-items: center;
+    }
+    .brand-icon img {
+      height: 45px;
+      width: auto;
+      border-radius: 8px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .brand-icon img:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
     .menu-toggle {
       display: none;
       background: none;
@@ -96,6 +114,7 @@
       color: white;
       font-size: 1.8rem;
       cursor: pointer;
+      margin-left: 1rem;
     }
 
     section {
@@ -503,6 +522,18 @@
       background: #075E54;
       color: white;
     }
+
+    /* Footer logo */
+    .footer-logo {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo img {
+      height: 40px;
+      width: auto;
+      border-radius: 6px;
+    }
+
     @media (max-width: 768px) {
       .floating-extra {
         right: 80px;
@@ -515,6 +546,7 @@
       }
       .menu-toggle {
         display: block;
+        order: 2;
       }
       .nav-links {
         display: none;
@@ -523,6 +555,7 @@
         align-items: center;
         gap: 1rem;
         padding: 1.5rem 0 0.5rem;
+        order: 3;
       }
       .nav-links.show {
         display: flex;
@@ -535,6 +568,21 @@
       }
       .card-img {
         height: 150px;
+      }
+      .brand-icon {
+        order: 1;
+      }
+      .logo {
+        order: 0;
+      }
+      nav {
+        justify-content: space-between;
+      }
+      .brand-icon img {
+        height: 35px;
+      }
+      .footer-logo img {
+        height: 35px;
       }
     }
   </style>
@@ -574,7 +622,6 @@
     <img src="logo.png" alt="Meghalaya Tour Operator Logo">
     <span>Meghalaya Tour Operator <small>Local Tribal Guides</small></span>
   </div>
-  <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
   <div class="nav-links" id="navLinks">
     <a href="#home">Home</a>
     <a href="#destinations">Destinations</a>
@@ -585,6 +632,10 @@
     <a href="#instagram">Instagram</a>
     <a href="#contact">Contact</a>
   </div>
+  <div class="brand-icon">
+    <a href="#home"><img src="logo.png" alt="Brand Logo"></a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
 </nav>
 
 <!-- Hero -->
@@ -604,7 +655,7 @@
   <div class="container">
     <h2>Popular Destinations & Activities</h2>
     <div class="grid-4">
-      <!-- Living Root Bridge – with image -->
+      <!-- Living Root Bridge -->
       <div class="card">
         <img class="card-img" src="living-root.jpg" alt="Living root bridge in Meghalaya">
         <div class="card-content">
@@ -613,7 +664,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
         </div>
       </div>
-      <!-- Rhino Site Seeing – with image -->
+      <!-- Rhino Site Seeing -->
       <div class="card">
         <img class="card-img" src="rhino.jpg" alt="One-horned rhinoceros in Kaziranga">
         <div class="card-content">
@@ -622,7 +673,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Guwahati, Assam</div>
         </div>
       </div>
-      <!-- Trekking – now with image -->
+      <!-- Trekking -->
       <div class="card">
         <img class="card-img" src="trekking.jpg" alt="Trekking in the hills of Meghalaya">
         <div class="card-content">
@@ -631,7 +682,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
         </div>
       </div>
-      <!-- Hiking – with image (already has, but we'll keep as is) -->
+      <!-- Hiking -->
       <div class="card">
         <img class="card-img" src="hiking.jpg" alt="Hiking in the lush green hills of Meghalaya">
         <div class="card-content">
@@ -640,7 +691,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
         </div>
       </div>
-      <!-- Caving – now with image -->
+      <!-- Caving -->
       <div class="card">
         <img class="card-img" src="caving.jpg" alt="Exploring caves in Meghalaya">
         <div class="card-content">
@@ -649,7 +700,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
         </div>
       </div>
-      <!-- Experience Khasi & Garo Cultures – with image -->
+      <!-- Khasi & Garo Cultures -->
       <div class="card">
         <img class="card-img" src="khasi-culture.jpg" alt="Khasi traditional dance and culture">
         <div class="card-content">
@@ -658,7 +709,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Meghalaya</div>
         </div>
       </div>
-      <!-- Experience Rainfall Under Tin Roof – with image -->
+      <!-- Rainfall Under Tin Roof -->
       <div class="card">
         <img class="card-img" src="rain-tin-roof.jpg" alt="Experience the famous rainfall under tin roof in Sohra">
         <div class="card-content">
@@ -667,7 +718,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Shella Area, Meghalaya</div>
         </div>
       </div>
-      <!-- Swimming – new activity -->
+      <!-- Swimming -->
       <div class="card">
         <img class="card-img" src="swimming.jpg" alt="Swimming in the crystal clear rivers of Meghalaya">
         <div class="card-content">
@@ -676,7 +727,7 @@
           <div class="location"><i class="fas fa-map-pin"></i> Dawki, Meghalaya</div>
         </div>
       </div>
-      <!-- Helicopter Rides – new activity -->
+      <!-- Helicopter Rides -->
       <div class="card">
         <img class="card-img" src="helicopter.jpg" alt="Aerial views of Meghalaya by helicopter">
         <div class="card-content">
@@ -703,35 +754,6 @@
     </div>
   </div>
 </section>
-
-<!-- How It Works (3 steps) – keep if you want, but it was not in the provided code. I'll keep it optional; if you want to include it, uncomment the following section. -->
-<!--
-<section>
-  <div class="container">
-    <h2>How It Works</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-number">1</div>
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Choose the place and time</h3>
-        <p>Select from our wide variety of destinations that cater to your travel preferences and schedule.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <i class="fas fa-calendar-check"></i>
-        <h3>Preparation for the trip</h3>
-        <p>We'll take care of most things – accommodations, permits, and local logistics – so you can relax.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <i class="fas fa-hiking"></i>
-        <h3>Start exploring</h3>
-        <p>Embark on an unforgettable journey with our expert local guides and immerse yourself in Meghalaya.</p>
-      </div>
-    </div>
-  </div>
-</section>
--->
 
 <!-- About + Mission -->
 <section id="about">
@@ -761,7 +783,6 @@
   <div class="container">
     <h2>Popular Meghalaya Tours</h2>
     <div class="tour-cards">
-      <!-- Classic Meghalaya -->
       <div class="tour-card">
         <h3>🌄 Classic Meghalaya</h3>
         <p><strong>7 Days | Guwahati to Guwahati</strong></p>
@@ -774,7 +795,6 @@
         <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
         <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
       </div>
-      <!-- Semi Offbeat + Kaziranga -->
       <div class="tour-card">
         <h3>🏕️ Semi Offbeat + Kaziranga</h3>
         <p><strong>8 Days | Guwahati – Meghalaya – Kaziranga</strong></p>
@@ -788,7 +808,6 @@
         <div class="tour-day"><strong>Day 8:</strong> Jeep safari, airport drop</div>
         <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
       </div>
-      <!-- Cave Exploration -->
       <div class="tour-card">
         <h3>🪨 Cave Exploration</h3>
         <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
@@ -886,7 +905,6 @@
     <h2>Instagram Photo Feed</h2>
     <p>Latest photos from our Instagram <strong>@meghalaya533</strong>.</p>
     <div class="instagram-embed">
-      <!-- LightWidget WIDGET -->
       <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
       <iframe src="//lightwidget.com/widgets/b38022b8f8e353209620e48f2992434e.html"
               scrolling="no"
@@ -913,10 +931,13 @@
   </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer (added logo in first column) -->
 <footer>
   <div class="footer-grid">
     <div>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Meghalaya Tour Operator Logo">
+      </div>
       <h4 style="color: #f0ead0;">Meghalaya Tour Operator</h4>
       <p style="color:#bcd5c0;">Local tribal tour operator since 2022</p>
       <div style="margin: 1rem 0;">

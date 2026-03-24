@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* All CSS unchanged – kept exactly as before */
+    /* All existing CSS – unchanged from previous version */
     * {
       margin: 0;
       padding: 0;
@@ -536,6 +536,28 @@
       font-size: 1.2rem;
     }
 
+    /* PayPal button */
+    .paypal-button {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .paypal-button a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #0070ba;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .paypal-button a:hover {
+      background: #005c9e;
+      transform: translateY(-2px);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -820,6 +842,10 @@
       }
       .unified-form {
         padding: 1.5rem;
+      }
+      .paypal-button a {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -1114,7 +1140,6 @@
   <div class="container">
     <h2>Popular Meghalaya Tours</h2>
     <div class="tour-cards">
-      <!-- Classic Meghalaya -->
       <div class="tour-card">
         <h3>🌄 Classic Meghalaya</h3>
         <p><strong>7 Days | Guwahati to Guwahati</strong></p>
@@ -1127,7 +1152,6 @@
         <div class="tour-day"><strong>Day 7:</strong> Airport drop</div>
         <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
       </div>
-      <!-- Offbeat Meghalaya Explorer (updated) -->
       <div class="tour-card">
         <h3>🏞️ Offbeat Meghalaya Explorer</h3>
         <p><strong>7 Days | Guwahati to Guwahati</strong></p>
@@ -1140,7 +1164,6 @@
         <div class="tour-day"><strong>Day 7:</strong> Mawsynram → Airport drop</div>
         <a href="#booking" class="btn" style="margin-top:1.5rem;">Enquire <i class="fas fa-arrow-right"></i></a>
       </div>
-      <!-- Cave Exploration -->
       <div class="tour-card">
         <h3>🪨 Cave Exploration</h3>
         <p><strong>Spelunking in Meghalaya’s famous caves</strong> (customizable)</p>
@@ -1253,6 +1276,13 @@
         <span><i class="fas fa-credit-card"></i> Credit/Debit Card</span>
         <span><i class="fab fa-paypal"></i> PayPal</span>
         <span><i class="fas fa-mobile-alt"></i> UPI</span>
+      </div>
+      <!-- PayPal button -->
+      <div class="paypal-button">
+        <a href="https://paypal.me/yourbusiness" target="_blank">
+          <i class="fab fa-paypal"></i> Pay with PayPal
+        </a>
+        <p style="font-size:0.8rem; margin-top:0.5rem;">Replace this link with your actual PayPal.me link or button code.</p>
       </div>
     </div>
   </div>

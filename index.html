@@ -536,26 +536,45 @@
       font-size: 1.2rem;
     }
 
-    /* PayPal button */
-    .paypal-button {
+    /* Payment methods row */
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0 0;
+      border-top: 1px solid #e0e7e3;
+      padding-top: 2rem;
+    }
+    .payment-method {
       text-align: center;
-      margin-top: 1.5rem;
+      flex: 1;
+      min-width: 150px;
     }
-    .paypal-button a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: #0070ba;
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
+    .payment-method h4 {
+      margin-bottom: 0.8rem;
+      color: var(--pine);
     }
-    .paypal-button a:hover {
-      background: #005c9e;
-      transform: translateY(-2px);
+    .payment-method img {
+      max-width: 100%;
+      height: auto;
+      max-height: 60px;
+    }
+    .qr-code {
+      max-width: 150px;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 8px;
+    }
+    .razorpay-placeholder {
+      background: #f2f2f2;
+      border: 1px dashed #999;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
     }
 
     .services-grid {
@@ -843,9 +862,14 @@
       .unified-form {
         padding: 1.5rem;
       }
-      .paypal-button a {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
+      .payment-methods {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .payment-method {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
@@ -1277,12 +1301,41 @@
         <span><i class="fab fa-paypal"></i> PayPal</span>
         <span><i class="fas fa-mobile-alt"></i> UPI</span>
       </div>
-      <!-- PayPal button -->
-      <div class="paypal-button">
-        <a href="https://paypal.me/yourbusiness" target="_blank">
-          <i class="fab fa-paypal"></i> Pay with PayPal
-        </a>
-        <p style="font-size:0.8rem; margin-top:0.5rem;">Replace this link with your actual PayPal.me link or button code.</p>
+
+      <!-- Additional payment methods: Razorpay + UPI QR -->
+      <div class="payment-methods">
+        <div class="payment-method">
+          <h4><i class="fas fa-qrcode"></i> Scan & Pay (UPI)</h4>
+          <img class="qr-code" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=upi://pay?pa=neizthangkhiew00@oksbi&pn=Meghalaya%20Tour%20Operator&cu=INR&am=0&mode=0&orgn=upi&sign=ME&src=qr" alt="UPI QR Code">
+          <p style="font-size:0.8rem; margin-top:0.5rem;">Scan with any UPI app (PhonePe, Google Pay, Paytm)</p>
+          <p style="font-size:0.8rem;"><strong>UPI ID:</strong> neizthangkhiew00@oksbi</p>
+        </div>
+        <div class="payment-method">
+          <h4><i class="fas fa-rupee-sign"></i> Razorpay</h4>
+          <div class="razorpay-placeholder">
+            <p>🔹 <strong>Razorpay payment button</strong> will appear here</p>
+            <p style="font-size:0.7rem; margin-top:0.5rem;">Replace this placeholder with your actual Razorpay button code from dashboard.razorpay.com</p>
+            <p style="font-size:0.7rem;">Example embed: <code>&lt;script src="https://checkout.razorpay.com/v1/button.js"&gt;&lt;/script&gt;</code></p>
+          </div>
+        </div>
+        <div class="payment-method">
+          <h4><i class="fab fa-paypal"></i> PayPal</h4>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com">
+            <input type="hidden" name="lc" value="IN">
+            <input type="hidden" name="item_name" value="Meghalaya Tour Booking">
+            <input type="hidden" name="amount" value="100.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="button_subtype" value="services">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="shipping" value="0.00">
+            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p style="font-size:0.8rem; margin-top:0.5rem;">Replace email, item name, and amount.</p>
+        </div>
       </div>
     </div>
   </div>

@@ -1576,10 +1576,53 @@
             <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Booking Request
           </button>
         </form>
+
+        <!-- Razorpay Payment Box -->
+        <div class="payment-box">
+          <div class="payment-box-header">
+            <i class="fas fa-lock"></i>
+            <div>
+              <strong>Secure Payment via Razorpay</strong>
+              <p>Pay your deposit or full amount securely after booking confirmation</p>
+            </div>
+          </div>
+          <a href="https://razorpay.me/@meghalayatouroperator7" target="_blank" rel="noopener" class="btn-razorpay">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5.5 3L10 14.5L14 8H21L12 21L8 10H1L5.5 3Z" fill="white"/></svg>
+            Pay via Razorpay
+          </a>
+          <div class="pay-methods">
+            <span><i class="fas fa-mobile-alt"></i> UPI</span>
+            <span><i class="fas fa-credit-card"></i> Cards</span>
+            <span><i class="fas fa-university"></i> Net Banking</span>
+            <span><i class="fas fa-wallet"></i> Wallets</span>
+            <span><i class="fas fa-globe"></i> International</span>
+          </div>
+          <p class="pay-note">
+            <i class="fas fa-info-circle"></i>
+            Please pay only after receiving confirmation from us via WhatsApp or phone. A <strong>30% deposit</strong> is required to confirm your booking.
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.payment-box{margin-top:1.5rem;background:#f7f7f7;border:1.5px solid rgba(0,0,0,.1);border-radius:var(--r-xl);padding:1.8rem;}
+.payment-box-header{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.4rem;}
+.payment-box-header i{font-size:1.4rem;color:#2b6cb0;margin-top:.15rem;flex-shrink:0;}
+.payment-box-header strong{display:block;color:#111;font-size:1rem;margin-bottom:.2rem;}
+.payment-box-header p{font-size:.88rem;color:#666;margin:0;}
+.btn-razorpay{display:flex;align-items:center;justify-content:center;gap:.65rem;width:100%;padding:.9rem 1.5rem;background:#2b6cb0;color:#fff;font-weight:700;font-size:1rem;border-radius:100px;text-decoration:none;transition:var(--ease);box-shadow:0 4px 16px rgba(43,108,176,.35);margin-bottom:1.2rem;}
+.btn-razorpay:hover{background:#1a508b;transform:translateY(-2px);box-shadow:0 8px 24px rgba(43,108,176,.4);}
+.pay-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:1.2rem;}
+.pay-methods span{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:100px;padding:.3rem .9rem;font-size:.8rem;font-weight:600;color:#444;}
+.pay-methods i{color:#2b6cb0;font-size:.85rem;}
+.pay-note{font-size:.83rem;color:#666;background:#fff;border-left:3px solid #2b6cb0;border-radius:0 8px 8px 0;padding:.7rem 1rem;margin:0;line-height:1.6;}
+.pay-note i{color:#2b6cb0;margin-right:.3rem;}
+.pay-note strong{color:#111;}
+</style>
 
 <!-- SERVICES -->
 <section id="services" class="services-section" aria-labelledby="services-heading">
@@ -1809,3 +1852,4 @@
 </script>
 </body>
 </html>
+    

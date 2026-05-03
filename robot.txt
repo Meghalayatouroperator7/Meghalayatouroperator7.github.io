@@ -1,7 +1,0 @@
-# robots.txt for Traverse Meghalaya
-# https://meghalayatouroperator7.github.io/
-
-User-agent: *
-Allow: /
-
-Sitemap: https://meghalayatouroperator7.github.io/sitemap.xml

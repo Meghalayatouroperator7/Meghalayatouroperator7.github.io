@@ -8,6 +8,7 @@
   <meta name="keywords" content="Meghalaya tour, Sohra tour, Cherrapunji travel, Dawki boating, living root bridge, Khasi culture, Meghalaya travel agency, local tour guide, Traverse Meghalaya">
   <meta name="author" content="Traverse Meghalaya">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="canonical" href="https://meghalayatouroperator7.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://meghalayatouroperator7.github.io/">
@@ -22,12 +23,21 @@
   <meta name="twitter:description" content="Book authentic Meghalaya tours with local tribal guides. Explore living root bridges, Dawki, Sohra, and Khasi culture. Customized packages, best prices.">
   <meta name="twitter:image" content="https://meghalayatouroperator7.github.io/hero-logo.png">
 
+  <link rel="preload" href="logo.png" as="image">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://formsubmit.co">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 
   <style>
+    /* ─── Performance: Font Display ─── */
+    @font-face { font-display: swap; }
+
     /* ─── Design Tokens ─── */
     :root {
       --pine:    #0a0a0a;
@@ -256,6 +266,7 @@
       border-radius: 50%;
       border: 1px solid rgba(150,150,150,.12);
       animation: ring-pulse 6s ease-in-out infinite;
+      will-change: transform, opacity;
     }
     .hero-ring:nth-child(1) { width:400px; height:400px; top:10%; left:-8%; animation-delay:0s; }
     .hero-ring:nth-child(2) { width:600px; height:600px; bottom:-10%; right:-12%; animation-delay:2s; }
@@ -374,6 +385,7 @@
       width: 100%;
       height: 190px;
       object-fit: cover;
+      image-rendering: auto;
       display: block;
       transition: transform .5s ease;
     }
@@ -464,6 +476,7 @@
       width: 48px; height: 48px;
       border-radius: 50%;
       object-fit: cover;
+      image-rendering: auto;
       border: 2px solid var(--mist);
     }
     .testi-author strong { display: block; color: var(--pine); font-size: .95rem; }
@@ -1064,7 +1077,7 @@
 <!-- NAV -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="#home" class="logo" aria-label="Traverse Meghalaya home">
-    <img src="logo.png" alt="Traverse Meghalaya logo" loading="lazy" width="44" height="44">
+    <img src="logo.png" alt="Traverse Meghalaya logo" loading="eager" fetchpriority="high" width="44" height="44">
     <div class="logo-text">
       <strong>Traverse Meghalaya</strong>
       <small>Local Tribal Guides</small>
@@ -1981,5 +1994,25 @@
     observer.observe(el);
   });
 </script>
+<script>
+// Defer non-critical operations
+document.addEventListener("DOMContentLoaded", function() {
+  // Lazy load images that are not in viewport
+  if ("IntersectionObserver" in window) {
+    const images = document.querySelectorAll("img[loading=lazy]");
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) { img.src = img.dataset.src; }
+          observer.unobserve(img);
+        }
+      });
+    });
+    images.forEach(function(img) { observer.observe(img); });
+  }
+});
+</script>
 </body>
 </html>
+ 
